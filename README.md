@@ -10,6 +10,25 @@
 - **Persistent Memory:** Uses an SQLite database (`chatbot.db`) to ensure conversation history is never lost.
 - **Clean Architecture:** Separation of concerns between the API logic (Backend) and the UI (Frontend).
 
+
+## 💎 Advanced Features
+
+### 🔌 Model Context Protocol (MCP) Implementation
+Unlike traditional hard-coded tools, GraphMind leverages the **MCP standard**, allowing for:
+* **Dynamic Tool Discovery:** Seamlessly connect to external data sources (GitHub, Google Drive, Local Filesystem) using a unified protocol.
+* **Contextual Intelligence:** Only relevant tools are invoked based on the conversation state, reducing latency and cost.
+
+### ⚡ Real-Time Streaming (UX First)
+The application is optimized for responsiveness:
+* **Token-by-Token Rendering:** Experience instant feedback as the LLM generates responses.
+* **Agentic Step Visualization:** The UI tracks the agent's "thought process" as it transitions between graph nodes (e.g., *Retrieval* -> *Reasoning* -> *Responding*).
+
+### 🧠 Persistent State & Session Management
+Built to handle real-world interruptions:
+* **Chat Resuming:** Leveraging LangGraph's `Checkpointer`, the agent can resume a conversation even after a server restart or browser refresh.
+* **Automatic Chat Saving:** Every turn is serialized into the `chatbot.db` (SQLite), ensuring no data loss and allowing for historical session review.
+
+---
 ---
 
 ## 🛠️ Tech Stack
